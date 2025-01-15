@@ -1,5 +1,5 @@
 import cv2
-from pymongo import MongoClient
+from pymongo import MongoCliente
 import numpy as np
 
 class BiometricSimulator:
