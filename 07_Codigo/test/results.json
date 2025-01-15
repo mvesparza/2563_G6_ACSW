@@ -1,0 +1,533 @@
+[
+{
+  "description": [
+    "As a user",
+    "I want to use biometric authentication",
+    "So that I can securely log in"
+  ],
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/biometric_authentication_fail.feature:6",
+      "name": "Fail to verify face recognition for an unregistered user",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/biometric_authentication_fail.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "steps/common_steps.py:4"
+          },
+          "name": "the BiometricSimulator is running",
+          "result": {
+            "duration": 0.03446149826049805,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/biometric_authentication_fail.feature:8",
+          "match": {
+            "arguments": [
+              {
+                "name": "username",
+                "value": "unregistered_user"
+              }
+            ],
+            "location": "steps/biometric_authentication_steps.py:12"
+          },
+          "name": "I try to verify the user \"unregistered_user\" with face recognition",
+          "result": {
+            "duration": 0.016571044921875,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/biometric_authentication_fail.feature:9",
+          "match": {
+            "arguments": [
+              {
+                "name": "message",
+                "value": "Error: No hay datos faciales almacenados para este usuario."
+              }
+            ],
+            "location": "steps/common_steps.py:15"
+          },
+          "name": "the system should show an error \"Error: No hay datos faciales almacenados para este usuario.\"",
+          "result": {
+            "duration": 0.00015115737915039062,
+            "error_message": [
+              "Assertion Failed: Expected 'Error: No hay datos faciales almacenados para este usuario.' but got 'Error: Usuario no encontrado.'",
+              "Captured stdout:",
+              "BiometricSimulator initialized."
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/biometric_authentication_fail.feature:1",
+  "name": "Rostro no Verificado",
+  "status": "failed",
+  "tags": []
+},
+
+{
+  "description": [
+    "As a user",
+    "I want to use biometric authentication",
+    "So that I can securely log in"
+  ],
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/biometric_authentication_success.feature:6",
+      "name": "Successfully verify face recognition for a registered user",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/biometric_authentication_success.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "steps/common_steps.py:4"
+          },
+          "name": "the BiometricSimulator is running",
+          "result": {
+            "duration": 0.030150413513183594,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "And",
+          "location": "features/biometric_authentication_success.feature:8",
+          "match": {
+            "arguments": [
+              {
+                "name": "username",
+                "value": "registered_user"
+              }
+            ],
+            "location": "steps/biometric_authentication_steps.py:3"
+          },
+          "name": "I have captured facial data for the user \"registered_user\"",
+          "result": {
+            "duration": 0.0040552616119384766,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/biometric_authentication_success.feature:9",
+          "match": {
+            "arguments": [
+              {
+                "name": "username",
+                "value": "registered_user"
+              }
+            ],
+            "location": "steps/biometric_authentication_steps.py:8"
+          },
+          "name": "I verify the user \"registered_user\" with face recognition",
+          "result": {
+            "duration": 0.0005583763122558594,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/biometric_authentication_success.feature:10",
+          "match": {
+            "arguments": [
+              {
+                "name": "message",
+                "value": "\u00a1Bienvenido, registered_user!"
+              }
+            ],
+            "location": "steps/common_steps.py:10"
+          },
+          "name": "the system should confirm \"\u00a1Bienvenido, registered_user!\"",
+          "result": {
+            "duration": 0.00011658668518066406,
+            "error_message": [
+              "Assertion Failed: Expected '\u00a1Bienvenido, registered_user!' but got 'Verificaci\u00f3n fallida. Rostro no reconocido.'",
+              "Captured stdout:",
+              "BiometricSimulator initialized.",
+              "Usuario 'registered_user' ya est\u00e1 registrado."
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/biometric_authentication_success.feature:1",
+  "name": "Rostro Verificado",
+  "status": "failed",
+  "tags": []
+},
+
+{
+  "description": [
+    "As a user",
+    "I want to log in to my account",
+    "So that I can access the system"
+  ],
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/login_fail.feature:6",
+      "name": "Fail to login with invalid credentials",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login_fail.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "steps/common_steps.py:4"
+          },
+          "name": "the BiometricSimulator is running",
+          "result": {
+            "duration": 0.026951074600219727,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login_fail.feature:8",
+          "match": {
+            "arguments": [
+              {
+                "name": "username",
+                "value": "invalid_user"
+              },
+              {
+                "name": "password",
+                "value": "wrong_password"
+              }
+            ],
+            "location": "steps/login_steps.py:7"
+          },
+          "name": "I login with username \"invalid_user\" and password \"wrong_password\"",
+          "result": {
+            "duration": 0.012694358825683594,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login_fail.feature:9",
+          "match": {
+            "arguments": [
+              {
+                "name": "message",
+                "value": "Error: Credenciales incorrectas."
+              }
+            ],
+            "location": "steps/common_steps.py:15"
+          },
+          "name": "the system should show an error \"Error: Credenciales incorrectas.\"",
+          "result": {
+            "duration": 0.00010824203491210938,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/login_fail.feature:1",
+  "name": "Credenciales Incorrectas",
+  "status": "passed",
+  "tags": []
+},
+
+{
+  "description": [
+    "As a user",
+    "I want to log in to my account",
+    "So that I can access the system"
+  ],
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/login_success.feature:6",
+      "name": "Successfully login with valid credentials",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login_success.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "steps/common_steps.py:4"
+          },
+          "name": "the BiometricSimulator is running",
+          "result": {
+            "duration": 0.025627851486206055,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "And",
+          "location": "features/login_success.feature:8",
+          "match": {
+            "arguments": [
+              {
+                "name": "username",
+                "value": "valid_user"
+              },
+              {
+                "name": "password",
+                "value": "secure_password"
+              }
+            ],
+            "location": "steps/login_steps.py:3"
+          },
+          "name": "I have registered a user with username \"valid_user\" and password \"secure_password\"",
+          "result": {
+            "duration": 0.020442962646484375,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login_success.feature:9",
+          "match": {
+            "arguments": [
+              {
+                "name": "username",
+                "value": "valid_user"
+              },
+              {
+                "name": "password",
+                "value": "secure_password"
+              }
+            ],
+            "location": "steps/login_steps.py:7"
+          },
+          "name": "I login with username \"valid_user\" and password \"secure_password\"",
+          "result": {
+            "duration": 0.0019075870513916016,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login_success.feature:10",
+          "match": {
+            "arguments": [
+              {
+                "name": "message",
+                "value": "\u00a1Bienvenido, valid_user!"
+              }
+            ],
+            "location": "steps/common_steps.py:10"
+          },
+          "name": "the system should confirm \"\u00a1Bienvenido, valid_user!\"",
+          "result": {
+            "duration": 0.00020599365234375,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/login_success.feature:1",
+  "name": "Inicio de sesion exitoso",
+  "status": "passed",
+  "tags": []
+},
+
+{
+  "description": [
+    "As a user",
+    "I want to use biometric authentication",
+    "So that I can securely log in"
+  ],
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/register_fail.feature:6",
+      "name": "Fail to verify face recognition for an unregistered user",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/register_fail.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "steps/common_steps.py:4"
+          },
+          "name": "the BiometricSimulator is running",
+          "result": {
+            "duration": 0.033560752868652344,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/register_fail.feature:8",
+          "match": {
+            "arguments": [
+              {
+                "name": "username",
+                "value": "unregistered_user"
+              }
+            ],
+            "location": "steps/biometric_authentication_steps.py:12"
+          },
+          "name": "I try to verify the user \"unregistered_user\" with face recognition",
+          "result": {
+            "duration": 0.02377939224243164,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/register_fail.feature:9",
+          "match": {
+            "arguments": [
+              {
+                "name": "message",
+                "value": "Error: No hay datos faciales almacenados para este usuario."
+              }
+            ],
+            "location": "steps/common_steps.py:15"
+          },
+          "name": "the system should show an error \"Error: No hay datos faciales almacenados para este usuario.\"",
+          "result": {
+            "duration": 0.00015926361083984375,
+            "error_message": [
+              "Assertion Failed: Expected 'Error: No hay datos faciales almacenados para este usuario.' but got 'Error: Usuario no encontrado.'",
+              "Captured stdout:",
+              "BiometricSimulator initialized."
+            ],
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/register_fail.feature:1",
+  "name": "Datos Faciales no Registrados",
+  "status": "failed",
+  "tags": []
+},
+
+{
+  "description": [
+    "As a user",
+    "I want to register a user",
+    "So that I can use the system"
+  ],
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/register_success.feature:6",
+      "name": "Successfully register a new user",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/register_success.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "steps/common_steps.py:4"
+          },
+          "name": "the BiometricSimulator is running",
+          "result": {
+            "duration": 0.0264742374420166,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/register_success.feature:8",
+          "match": {
+            "arguments": [
+              {
+                "name": "username",
+                "value": "Camila"
+              },
+              {
+                "name": "password",
+                "value": "secure_password"
+              }
+            ],
+            "location": "steps/register_steps.py:3"
+          },
+          "name": "I register a user with username \"Camila\" and password \"secure_password\"",
+          "result": {
+            "duration": 0.021776437759399414,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/register_success.feature:9",
+          "match": {
+            "arguments": [
+              {
+                "name": "message",
+                "value": "Usuario Camila registrado con \u00e9xito."
+              }
+            ],
+            "location": "steps/common_steps.py:10"
+          },
+          "name": "the system should confirm \"Usuario Camila registrado con \u00e9xito.\"",
+          "result": {
+            "duration": 0.00010800361633300781,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/register_success.feature:1",
+  "name": "Registro nuevo usuario",
+  "status": "passed",
+  "tags": []
+}
+]
